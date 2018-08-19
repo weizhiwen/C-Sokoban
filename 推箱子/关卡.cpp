@@ -17,14 +17,13 @@ int IsSuccess()
 		return 0;
 }
 
-// 修复洞位置的字符
+// 修复特殊位置的字符
 void FixHoleChar()
 {
 	for (int i = 0; i < 3; i++)
 	{
-		//int flag = (Map[holePoint[i][0]][holePoint[i][1]] != 'P' || Map[holePoint[i][0]][holePoint[i][1]] != 'X') ? 1 : 0;
 		int flag = 0;
-		flag = Map[holePoint[i][0]][holePoint[i][1]] == 32 ? 1 : 0;
+		flag = Map[holePoint[i][0]][holePoint[i][1]] == ' ' ? 1 : 0;
 		if (flag)
 		{
 			Map[holePoint[i][0]][holePoint[i][1]] = 'O';
